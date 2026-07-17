@@ -106,7 +106,7 @@ if not test -f $downloads_dir/dnscontrol-$upstream_version
     set --local archive $downloads_dir/$latest_binary.tar.gz
     test -f $archive; and rm $archive
 
-    printf '%-72s' 'Downloading the latest version...'
+    printf '%-66s' 'Downloading the latest version...'
     curl -jsSL -o $archive $download_url
     if test $status -ne 0
         echo >&2 "Error downloading the latest version. Exiting prematurely."
@@ -114,7 +114,7 @@ if not test -f $downloads_dir/dnscontrol-$upstream_version
     end
     echo done.
 
-    printf '%-72s' 'Extracting the binary from the downloaded archive...'
+    printf '%-66s' 'Extracting the binary from the downloaded archive...'
     tar xf $archive --directory $downloads_dir/
     if test $status -ne 0
         echo >&2 "Error extracting. Exiting prematurely"
